@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAdjustment" id="adj">
+    <property name="upper">32</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkWindow" id="win_main">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Optical Switch Demo</property>
+    <property name="default_width">470</property>
+    <property name="default_height">240</property>
+    <signal name="destroy" handler="on_win_main_destroy" swapped="no"/>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkSpinButton" id="sb_ch">
+            <property name="width_request">200</property>
+            <property name="height_request">160</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="input_purpose">digits</property>
+            <property name="orientation">vertical</property>
+            <property name="adjustment">adj</property>
+            <property name="numeric">True</property>
+            <property name="wrap">True</property>
+            <signal name="value-changed" handler="on_sb_ch_value_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">20</property>
+            <property name="y">50</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lbl">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Select port no. when switch is on</property>
+          </object>
+          <packing>
+            <property name="x">20</property>
+            <property name="y">20</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="sw_power">
+            <property name="width_request">200</property>
+            <property name="height_request">160</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="active">True</property>
+            <signal name="state-set" handler="on_sw_power_state_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">50</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
