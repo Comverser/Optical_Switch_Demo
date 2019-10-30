@@ -1,7 +1,8 @@
 # od_demo
 
-## program
+## git
 mkdir -p ~/dev_s && cd dev_s
+
 git clone https://github.com/Comverser/od_demo
 
 ## dependencies
