@@ -1,5 +1,8 @@
 # od_demo
 
+## program
+git clone https://github.com/Comverser/od_demo/Optical_Switch_Demo.git
+
 ## dependencies
 sudo apt install libgtk-3-dev
 ### for development
