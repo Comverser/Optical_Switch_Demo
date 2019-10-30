@@ -18,7 +18,7 @@ sudo apt install glade
 
 ## git
 
-mkdir -p ~/Desktop && git clone https://github.com/Comverser/Optical_Switch_Demo.git
+cd ~/Desktop && git clone https://github.com/Comverser/Optical_Switch_Demo.git
 
 
 
