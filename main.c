@@ -3,7 +3,7 @@
 
 enum ttl
 {
-    reset = 8,
+    reset = 3,
     strobe = 36,
     data0 = 33,
     data1 = 38,
