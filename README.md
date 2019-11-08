@@ -24,4 +24,4 @@ cd ~/Desktop && git clone https://github.com/Comverser/Optical_Switch_Demo.git
 
 ## compile
 
-gcc -o Optical_Switch_Demo main.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic -lwiringPi
+gcc -o Optical_Switch_Demo main.c -Wall \`pkg-config --cflags --libs gtk+-3.0\` -export-dynamic -lwiringPi
