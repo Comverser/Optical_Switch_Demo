@@ -45,12 +45,11 @@ void ttl(int num)
     if ( num == 0 )
     {
         digitalWrite (reset, LOW);
+        digitalWrite (reset, HIGH);
     }
     else if ( num >= 1 )
     {
         num--;
-        // normal switch operation
-        digitalWrite (reset, HIGH);
         // ttl
         digitalWrite (data0, 00001 & (num>>0));
         digitalWrite (data1, 00001 & (num>>1));
