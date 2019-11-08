@@ -3,6 +3,7 @@
 
 enum ttl
 {
+    reset = 8,
     strobe = 36,
     data0 = 33,
     data1 = 38,
@@ -19,6 +20,7 @@ int ttl_setup()
     }
 
     // pin mode settings
+    pinMode(reset, OUTPUT);
     pinMode(strobe, OUTPUT);
     pinMode(data0, OUTPUT);
     pinMode(data1, OUTPUT);
@@ -27,6 +29,7 @@ int ttl_setup()
     pinMode(data4, OUTPUT);
 
     // init
+    digitalWrite (reset, HIGH);
     digitalWrite (strobe, HIGH);
     digitalWrite (data0, LOW);
     digitalWrite (data1, LOW);
@@ -39,15 +42,25 @@ int ttl_setup()
 
 void ttl(int num)
 {
-    // ttl
-    digitalWrite (data0, 00001 & (num>>0));
-    digitalWrite (data1, 00001 & (num>>1));
-    digitalWrite (data2, 00001 & (num>>2));
-    digitalWrite (data3, 00001 & (num>>3));
-    digitalWrite (data4, 00001 & (num>>4));
-    // strobe
-    digitalWrite (strobe, LOW);
-    digitalWrite (strobe, HIGH);
+    if ( num == 0 )
+    {
+        digitalWrite (reset, LOW);
+    }
+    else if ( num >= 1 )
+    {
+        num--;
+        // normal switch operation
+        digitalWrite (reset, HIGH);
+        // ttl
+        digitalWrite (data0, 00001 & (num>>0));
+        digitalWrite (data1, 00001 & (num>>1));
+        digitalWrite (data2, 00001 & (num>>2));
+        digitalWrite (data3, 00001 & (num>>3));
+        digitalWrite (data4, 00001 & (num>>4));
+        // strobe
+        digitalWrite (strobe, LOW);
+        digitalWrite (strobe, HIGH);
+    }
 }
 
 typedef struct
